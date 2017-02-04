@@ -1,4 +1,4 @@
-sources = *.c general/*.c
+sources = *.c general/*.c cpu/*.c cpu/ops/*.c
 target = ns4
 cc := gcc-6
 
