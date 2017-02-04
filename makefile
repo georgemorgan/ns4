@@ -3,10 +3,10 @@ target = ns4
 cc := gcc-6
 
 # The include folders.
-include = include
+includes = include
 # The include flags.
-includes = $(foreach inc,$(include),-I $(inc))
+includeflags = $(foreach include, $(includes),-I $(include))
 
 # Recipe for building the emulator binary.
 all:
-	$(cc) $(includes) $(sources) -o $(target)
+	$(cc) $(includeflags) $(sources) -o $(target)
