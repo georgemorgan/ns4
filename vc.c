@@ -1,4 +1,5 @@
-#include <ns4.h>
+#include <vc.h>
+#include <n64.h>
 
 static inline void validate_vc(struct _ns4_vc *vc) {
     ns4_assert(vc, NS4_ERROR, "No virtal console provided to VC instance.");

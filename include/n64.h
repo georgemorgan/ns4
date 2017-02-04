@@ -3,11 +3,10 @@
 #ifndef __n64_h__
 #define __n64_h__
 
+#include <ns4.h>
+
 /* 4MB of external Rambus RDRAM. */
 #define N64_RDRAM_SIZE 4*1024*1024
-
-/* 64-bit MIPS CPU declarations. */
-#include <vr4300i.h>
 
 /* The structure of the N64 cartridge header. */
 struct _n64_rom_header {

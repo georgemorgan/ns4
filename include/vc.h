@@ -3,6 +3,9 @@
 #ifndef __vc_h__
 #define __vc_h__
 
+#include <ns4.h>
+#include <vr4300i.h>
+
 /* The virtual console structure. */
 struct _ns4_vc {
     /* A pointer to the ROM plane. */

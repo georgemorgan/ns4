@@ -5,17 +5,10 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <errno.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-/* Virtual console declarations. */
-#include "vc.h"
-/* The top-level virtual console. */
-struct _ns4_vc vc;
-
-/* Nintendo 64 declarations. */
-#include "n64.h"
 
 /* A variety of XTERM color macros. */
 #define KRST  "\x1B[0m"

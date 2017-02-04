@@ -8,11 +8,16 @@
  * console, its hardware, and its rendering pipeline.
  */
 
+/* Top-level project header. */
 #include <ns4.h>
+/* Virtual console declarations. */
+#include <vc.h>
 
 int main(int argc, char *argv[]) {
     /* Assert if too few arguments are passed to the program. */
     ns4_assert(argc > 1, NS4_ERROR, "No ROM path provided as program argument." USAGE);
+    /* Create a local copy of the virtual console. */
+    struct _ns4_vc vc;
     /* Instantiate the virtual console. */
     ns4_vc_create(&vc, argv[1]);
     /* Display the ROM information. */

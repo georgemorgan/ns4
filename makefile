@@ -1,12 +1,19 @@
-sources = *.c general/*.c cpu/*.c cpu/ops/*.c
+sources = $(shell find . -name '*.c')
 target = ns4
 cc := gcc-6
 
 # The include folders.
 includes = include
-# The include flags.
-includeflags = $(foreach include, $(includes),-I $(include))
+# Compute objects, append extra flags, and add includes.
+objects = $(addsuffix .o, $(basename $(sources)))
+flags += $(foreach include, $(includes),-I $(include))
 
 # Recipe for building the emulator binary.
-all:
-	$(cc) $(includeflags) $(sources) -o $(target)
+all: $(objects)
+	$(cc) $(objects) -o $(target)
+
+%.o : %.c
+	$(cc) $(flags) -c $< -o $@
+
+clean:
+	rm -rf $(target) $(objects)
