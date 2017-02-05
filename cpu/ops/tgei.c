@@ -11,9 +11,8 @@
 #define OPCODE 0x1
 
 void ns4_vr4300i_tgei(struct _vr4300i *vr) {
-	uint32_t rs = (inst() >> 0x15) & 0x1f;
-	uint32_t 01000 (8) = (inst() >> 0x10) & 0x1f;
-	uint32_t immediate = (inst() >> 0x0) & 0xffff;
+	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
+	uint32_t immediate = (vr -> op >> 0x0) & 0xffff;
 
 	ns4_debug("tgei rs, immediate, ");
 }

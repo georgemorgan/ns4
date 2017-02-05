@@ -33,7 +33,7 @@
 #define USAGE KRST "\n  usage: ./ns4 <rom> [<options> ...]\n"
 
 /* Debugging function. */
-#define ns4_debug(fmt, ...) fprintf(stdout, KGRN fmt KRST, __VA_ARGS__);
+#define ns4_debug(fmt, ...) fprintf(stdout, KGRN fmt KRST, ##__VA_ARGS__);
 
 /* Values of the assertions that can be passed to the assertion function. */
 enum { NS4_ERROR, NS4_WARN };

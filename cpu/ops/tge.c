@@ -11,10 +11,9 @@
 #define OPCODE 0x0
 
 void ns4_vr4300i_tge(struct _vr4300i *vr) {
-	uint32_t rs = (inst() >> 0x15) & 0x1f;
-	uint32_t rt = (inst() >> 0x10) & 0x1f;
-	uint32_t code = (inst() >> 0x6) & 0x3ff;
-	uint32_t 110000 (48) = (inst() >> 0x0) & 0x3f;
+	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
+	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
+	uint32_t code = (vr -> op >> 0x6) & 0x3ff;
 
 	ns4_debug("tge rs, rt, code, ");
 }

@@ -10,9 +10,9 @@
 #define OPCODE 0x3c
 
 void ns4_vr4300i_scd(struct _vr4300i *vr) {
-	uint32_t base = (inst() >> 0x15) & 0x1f;
-	uint32_t rt = (inst() >> 0x10) & 0x1f;
-	uint32_t offset = (inst() >> 0x0) & 0xffff;
+	uint32_t base = (vr -> op >> 0x15) & 0x1f;
+	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
+	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
 	ns4_debug("scd base, rt, offset, ");
 }

@@ -10,9 +10,7 @@
 #define OPCODE 0x10
 
 void ns4_vr4300i_tlbr(struct _vr4300i *vr) {
-	uint32_t CO = (inst() >> 0x19) & 0x1;
-	uint32_t 0000 0000 0000 0000 000 = (inst() >> 0x6) & 0x7ffff;
-	uint32_t 000001 (1) = (inst() >> 0x0) & 0x3f;
+	uint32_t CO = (vr -> op >> 0x19) & 0x1;
 
 	ns4_debug("tlbr CO, ");
 }

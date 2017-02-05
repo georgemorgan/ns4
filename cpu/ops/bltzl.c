@@ -11,9 +11,8 @@
 #define OPCODE 0x1
 
 void ns4_vr4300i_bltzl(struct _vr4300i *vr) {
-	uint32_t rs = (inst() >> 0x15) & 0x1f;
-	uint32_t 00010 (2) = (inst() >> 0x10) & 0x1f;
-	uint32_t offset = (inst() >> 0x0) & 0xffff;
+	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
+	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
 	ns4_debug("bltzl rs, offset, ");
 }

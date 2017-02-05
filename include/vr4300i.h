@@ -58,6 +58,8 @@ struct _vr4300i_cop0 {
 };
 
 struct _vr4300i {
+    /* The CPU's memory controller. */
+    struct _ns4_mc *mc;
     /* Primary general purpose registers. */
     uint64_t r0;
     uint64_t at;
@@ -91,13 +93,19 @@ struct _vr4300i {
     uint64_t sp;
     uint64_t s8;
     uint64_t ra;
+    /* The current opcode. */
+    uint32_t op;
+    /* The program counter. */
+    uint64_t pc;
     /* COP0 core. */
     struct _vr4300i_cop0 cop0;
 };
 
 /* Creates a VR4300i CPU. */
-void vr4300i_create(struct _vr4300i *vr);
+void vr4300i_create(struct _vr4300i *vr, struct _ns4_mc *mc);
 /* Executes the entire CPU's pipeline for one instruction. */
 void vr4300i_step(struct _vr4300i *vr);
+/* Performs an instruction. */
+void vr4300i_exec(struct _vr4300i *vr);
 
 #endif

@@ -2,6 +2,6 @@
 
 #include <pif.h>
 
-void pif_create(struct _pif *pif) {
-    
+void pif_create(struct _ns4_pif *pif) {
+
 }

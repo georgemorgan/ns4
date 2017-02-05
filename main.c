@@ -13,6 +13,16 @@
 /* Virtual console declarations. */
 #include <vc.h>
 
+#include <vr4300i.h>
+
+/* Whether or not the emulator is running. */
+bool play = true;
+
+/* Handle SIGINT. */
+void sigint(int signal) {
+    exit(EXIT_SUCCESS);
+}
+
 int main(int argc, char *argv[]) {
     /* Assert if too few arguments are passed to the program. */
     ns4_assert(argc > 1, NS4_ERROR, "No ROM path provided as program argument." USAGE);
@@ -22,6 +32,14 @@ int main(int argc, char *argv[]) {
     ns4_vc_create(&vc, argv[1]);
     /* Display the ROM information. */
     ns4_vc_rom_info(&vc);
+
+    /* Capture sigint. */
+    signal(SIGINT, sigint);
+
+    while (1) {
+        vr4300i_step(&(vc.cpu));
+        getchar();
+    }
 
     return EXIT_SUCCESS;
 }

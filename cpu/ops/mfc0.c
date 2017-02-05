@@ -11,10 +11,8 @@
 #define OPCODE 0x10
 
 void ns4_vr4300i_mfc0(struct _vr4300i *vr) {
-	uint32_t 00000 (0) = (inst() >> 0x15) & 0x1f;
-	uint32_t rt = (inst() >> 0x10) & 0x1f;
-	uint32_t fs = (inst() >> 0xb) & 0x1f;
-	uint32_t 0000 0000 000 = (inst() >> 0x0) & 0x7ff;
+	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
+	uint32_t fs = (vr -> op >> 0xb) & 0x1f;
 
 	ns4_debug("mfc0 rt, fs, ");
 }
