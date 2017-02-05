@@ -32,6 +32,7 @@ def main():
         cfc.append('/* ' + name + '.c - ' + desc + ' */\n\n')
         cfc.append('#include <vr4300i.h>\n\n')
         cfc.append('/*\n')
+        oppsu = opa[5:][-1] if (len(opa[5:]) > 2) else '/* no imp */'
         for i in opa[5:]:
             cfc.append('  ' + i + '\n')
         cfc.append('*/\n\n')
@@ -44,6 +45,37 @@ def main():
             if ob.isalpha():
                 cfc.append('\tuint32_t ' + ob + ' = (vr -> op >> ' + str(hex(32 - width - offset)) + ') & ' + str(hex(pow(2, width) - 1)) + ';\n')
             offset += width
+
+        # User code begin
+
+        oppsu = oppsu.replace('AND', '&')
+        oppsu = oppsu.replace('OR', '|')
+        oppsu = oppsu.replace('( signed )', '')
+        oppsu = oppsu.replace('<>', '!=')
+        oppsua = oppsu.split()
+
+        # Add logic for parsing conditionals.
+        if oppsua[0] == 'branch':
+            if '=' in oppsua:
+                eqi = oppsua.index('=')
+                oppsua[eqi] = '=='
+            oppsua[1] = 'if ('
+            oppsua.append(') {\n\t\t')
+            oppsua.append('vr -> pc += offset;')
+            if name.startswith('bl'):
+                oppsua.append('\n\t\tvr -> lr = vr -> pc;')
+            oppsua.append('\n\t}')
+            oppsua.remove(oppsua[0])
+
+        print oppsua
+        for i, s in enumerate(oppsua):
+            if s.isalpha() and (s.startswith('r') or s.startswith('s')) :
+                oppsua[i] = 'vr -> regs[' + s + ']'
+        oppsuas = ' '.join(oppsua).replace('( ', '(').replace(' )', ')')
+        cfc.append('\n\t' + oppsuas + ';\n')
+
+        # User code end
+
         cfc.append('\n\tns4_debug("' + name + ' ')
         format = []
         for i in fields[1:]:

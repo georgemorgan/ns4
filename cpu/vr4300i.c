@@ -10,6 +10,8 @@ const char *regstrs[] = { "r0", "at", "v0", "v1", "a0", "a1", "a2", "a3", "t0", 
 void vr4300i_create(struct _vr4300i *vr, struct _ns4_mc *mc) {
     /* Set the CPU's memory controller. */
     vr -> mc = mc;
+    /* Set the register address. */
+    vr -> regs = &(vr -> r0);
 }
 
 void vr4300i_step(struct _vr4300i *vr) {

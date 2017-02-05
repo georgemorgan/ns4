@@ -373,7 +373,7 @@ class_0x10:
 		case 0x0:
 			ns4_vr4300i_mfc0(vr);
 			break;
-		case 0xf:
+		case 0x0:
 			ns4_vr4300i_mtc0(vr);
 			break;
 		case 0x8:
@@ -392,3 +392,4 @@ class_0x10:
 	return;
 
 }
+

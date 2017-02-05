@@ -60,6 +60,8 @@ struct _vr4300i_cop0 {
 struct _vr4300i {
     /* The CPU's memory controller. */
     struct _ns4_mc *mc;
+    /* Access the registers as an array. */
+    uint64_t *regs;
     /* Primary general purpose registers. */
     uint64_t r0;
     uint64_t at;

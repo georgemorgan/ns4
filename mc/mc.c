@@ -79,16 +79,16 @@ uint32_t mc_read32(struct _ns4_mc *mc, uint64_t address) {
 
     } else if (address >= 0x5000000 && address < 0x6000000) {
     	/* Cartridge Domain 2 Address 1 */
-
+        return swap_le(*(uint32_t *)(mc -> rom + (address - 0x5000000)));
     } else if (address >= 0x6000000 && address < 0x8000000) {
     	/* Cartridge Domain 1 Address 1 */
         return swap_le(*(uint32_t *)(mc -> rom + (address - 0x6000000)));
     } else if (address >= 0x8000000 && address < 0x10000000) {
     	/* Cartridge Domain 2 Address 2 */
-
+        return swap_le(*(uint32_t *)(mc -> rom + (address - 0x8000000)));
     } else if (address >= 0x10000000 && address < 0x1fc00000) {
     	/* Cartridge Domain 1 Address 2 */
-
+        return swap_le(*(uint32_t *)(mc -> rom + (address - 0x10000000)));
     } else if (address >= 0x1fc00000 && address < 0x1fc007c0) {
     	/* PIF */
 
@@ -100,7 +100,7 @@ uint32_t mc_read32(struct _ns4_mc *mc, uint64_t address) {
 
     } else if (address >= 0x1fd00000 && address < 0x80000000) {
     	/* Cartridge Domain 1 Address 3 */
-
+        return swap_le(*(uint32_t *)(mc -> rom + (address - 0x1fd00000)));
     } else if (address >= 0x80000000 && address < 0x100000000) {
     	/* External SysAD Device */
 

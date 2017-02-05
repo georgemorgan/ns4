@@ -15,5 +15,7 @@ void ns4_vr4300i_slt(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 
+	if vr -> regs[rs] < vr -> regs[rt] then vr -> regs[rd] = 1 else vr -> regs[rd] = 0;
+
 	ns4_debug("slt %s, %s, %s", regstrs[rs], regstrs[rt], regstrs[rd]);
 }

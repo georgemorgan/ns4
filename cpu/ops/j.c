@@ -11,5 +11,7 @@
 
 void ns4_vr4300i_j(struct _vr4300i *vr) {
 
+	/* no imp */;
+
 	ns4_debug("j ");
 }

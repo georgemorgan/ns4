@@ -12,5 +12,7 @@
 void ns4_vr4300i_mthi(struct _vr4300i *vr) {
 	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
 
+	/* no imp */;
+
 	ns4_debug("mthi %s", regstrs[rs]);
 }

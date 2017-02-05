@@ -3,7 +3,7 @@
 #include <vr4300i.h>
 
 /*
-  SYNC          (stype = 0 implied)
+  SYNC          ( stype = 0 implied )
   order loads and stores shared memory in amultiprocessor system.
 */
 
@@ -11,6 +11,8 @@
 
 void ns4_vr4300i_sync(struct _vr4300i *vr) {
 	uint32_t stype = (vr -> op >> 0x6) & 0x1f;
+
+	/* no imp */;
 
 	ns4_debug("sync 0x%x", stype);
 }

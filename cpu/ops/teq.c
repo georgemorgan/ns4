@@ -15,5 +15,7 @@ void ns4_vr4300i_teq(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t code = (vr -> op >> 0x6) & 0x3ff;
 
+	if vr -> regs[rs] = vr -> regs[rt] then trap;
+
 	ns4_debug("teq %s, %s, 0x%x", regstrs[rs], regstrs[rt], code);
 }

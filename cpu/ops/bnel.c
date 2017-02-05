@@ -16,5 +16,9 @@ void ns4_vr4300i_bnel(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
+	if (vr -> regs[rs] != vr -> regs[rt]) {
+		 vr -> pc += offset; 
+	};
+
 	ns4_debug("bnel %s, %s, 0x%x", regstrs[rs], regstrs[rt], offset);
 }

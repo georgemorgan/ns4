@@ -15,5 +15,7 @@ void ns4_vr4300i_daddiu(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t immediate = (vr -> op >> 0x0) & 0xffff;
 
+	vr -> regs[rt] = vr -> regs[rs] + immediate;
+
 	ns4_debug("daddiu %s, %s, 0x%x", regstrs[rs], regstrs[rt], immediate);
 }

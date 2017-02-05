@@ -15,5 +15,7 @@ void ns4_vr4300i_dsub(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 
+	vr -> regs[rd] = vr -> regs[rs] - vr -> regs[rt];
+
 	ns4_debug("dsub %s, %s, %s", regstrs[rs], regstrs[rt], regstrs[rd]);
 }

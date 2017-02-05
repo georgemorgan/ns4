@@ -12,5 +12,7 @@
 
 void ns4_vr4300i_jal(struct _vr4300i *vr) {
 
+	vr -> regs[return] address in vr -> regs[ra];
+
 	ns4_debug("jal ");
 }
