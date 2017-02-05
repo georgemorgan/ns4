@@ -2,8 +2,18 @@
 
 #include <vr4300i.h>
 
+/*
+  SDR rt, offset(base)
+  store the least-significant part of a doubleword toan unaligned memory address.
+  left[base+offset] = right(rt)
+*/
+
 #define OPCODE 0x2d
 
-void ns4_vr4300i_sdr(void) {
+void ns4_vr4300i_sdr(struct _vr4300i *vr) {
+	uint32_t base = (inst() >> 0x15) & 0x1f;
+	uint32_t rt = (inst() >> 0x10) & 0x1f;
+	uint32_t offset = (inst() >> 0x0) & 0xffff;
 
+	ns4_debug("sdr base, rt, offset, ");
 }

@@ -3,1044 +3,1044 @@
 |-----------|---------------------------------------------------|
 |100000 (32)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LB rt, offset(base)
- Purpose: To load a byte from memory as a signed value.
- Descrip: rt = byte[base+offset]
+LB rt, offset(base)
+load a byte from memory as a signed value.
+rt = byte[base+offset]
 
 -----------------------------------------------------------------
 | LBU       | Load Byte Unsigned                                |
 |-----------|---------------------------------------------------|
 |100100 (36)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LBU rt, offset(base)
- Purpose: To load a byte from memory as an unsigned value.
- Descrip: rt = byte[base+offset]
+LBU rt, offset(base)
+load a byte from memory as an unsigned value.
+rt = byte[base+offset]
 
 -----------------------------------------------------------------
 | LD        | Load Doubleword                                   |
 |-----------|---------------------------------------------------|
 |110111 (55)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LD rt, offset(base)
- Purpose: To load a doubleword from memory.
- Descrip: rt = doubleword[base+offset]
+LD rt, offset(base)
+load a doubleword from memory.
+rt = doubleword[base+offset]
 
 -----------------------------------------------------------------
 | LDL       | Load Doubleword Left                              |
 |-----------|---------------------------------------------------|
 |011010 (26)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LDL rt, offset(base)
- Purpose: To load the most-significant part of a doubleword froman unaligned memory address.
- Descrip: left(rt) = right[base+offset]
+LDL rt, offset(base)
+load the most-significant part of a doubleword froman unaligned memory address.
+left(rt) = right[base+offset]
 
 -----------------------------------------------------------------
 | LDR       | Load Doubleword Right                             |
 |-----------|---------------------------------------------------|
 |011011 (27)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LDR rt, offset(base)
- Purpose: To load the least-significant part of a doubleword froman unaligned memory address.
- Descrip: right(rt) = left[base+offset]
+LDR rt, offset(base)
+load the least-significant part of a doubleword froman unaligned memory address.
+right(rt) = left[base+offset]
 
 -----------------------------------------------------------------
 | LH        | Load Halfword                                     |
 |-----------|---------------------------------------------------|
 |100001 (33)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LH rt, offset(base)
- Purpose: To load a halfword from memory as a signed value.
- Descrip: rt = halfword[base+offset]
+LH rt, offset(base)
+load a halfword from memory as a signed value.
+rt = halfword[base+offset]
 
 -----------------------------------------------------------------
 | LHU       | Load Halfword Unsigned                            |
 |-----------|---------------------------------------------------|
 |100101 (37)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LHU rt, offset(base)
- Purpose: To load a halfword from memory as an unsigned value.
- Descrip: rt = halfword[base+offset]
+LHU rt, offset(base)
+load a halfword from memory as an unsigned value.
+rt = halfword[base+offset]
 
 -----------------------------------------------------------------
 | LL        | Load Linked Word                                  |
 |-----------|---------------------------------------------------|
 |110000 (48)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LL rt, offset(base)
- Purpose: To load a word from memory for an atomic read-modify-write.
+LL rt, offset(base)
+load a word from memory for an atomic read-modify-write.
 
 -----------------------------------------------------------------
 | LLD       | Load Linked Doubleword                            |
 |-----------|---------------------------------------------------|
 |110100 (52)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LLD rt, offset(base)
- Purpose: To load a doubleword from memory for an atomic read-modify-write.
+LLD rt, offset(base)
+load a doubleword from memory for an atomic read-modify-write.
 
 -----------------------------------------------------------------
 | LW        | Load Word                                         |
 |-----------|---------------------------------------------------|
 |100011 (35)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LW rt, offset(base)
- Purpose: To load a word from memory as a signed value.
- Descrip: rt = word[base+offset]
+LW rt, offset(base)
+load a word from memory as a signed value.
+rt = word[base+offset]
 
 -----------------------------------------------------------------
 | LWL       | Load Word Left                                    |
 |-----------|---------------------------------------------------|
 |100010 (34)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LWL rt, offset(base)
- Purpose: To load the most-significant part of a word as asigned value from an unaligned memory address.
- Descrip: left(rt) = right[base+offset]
+LWL rt, offset(base)
+load the most-significant part of a word as asigned value from an unaligned memory address.
+left(rt) = right[base+offset]
 
 -----------------------------------------------------------------
 | LWR       | Load Word Right                                   |
 |-----------|---------------------------------------------------|
 |100110 (38)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LWR rt, offset(base)
- Purpose: To load the least-significant part of a word from anunaligned memory address as a signed value.
- Descrip: right(rt) = left[base+offset]
+LWR rt, offset(base)
+load the least-significant part of a word from anunaligned memory address as a signed value.
+right(rt) = left[base+offset]
 
 -----------------------------------------------------------------
 | LWU       | Load Word Unsigned                                |
 |-----------|---------------------------------------------------|
 |100111 (39)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  LWU rt, offset(base)
- Purpose: To load a word from memory as an unsigned value.
- Descrip: rt = word[base+offset]
+LWU rt, offset(base)
+load a word from memory as an unsigned value.
+rt = word[base+offset]
 
 -----------------------------------------------------------------
 | SB        | Store Byte                                        |
 |-----------|---------------------------------------------------|
 |101000 (40)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SB rt, offset(base)
- Purpose: To store a byte to memory.
- Descrip: byte[base+offset] = rt
+SB rt, offset(base)
+store a byte memory.
+byte[base+offset] = rt
 
 -----------------------------------------------------------------
 | SC        | Store Conditional Word                            |
 |-----------|---------------------------------------------------|
 |111000 (56)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SC rt, offset(base)
- Purpose: To store a word to memory to complete an atomic read-modify-write.
+SC rt, offset(base)
+store a word memory complete an atomic read-modify-write.
 
 -----------------------------------------------------------------
 | SCD       | Store Conditional Doubleword                      |
 |-----------|---------------------------------------------------|
 |111100 (60)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SCD rt, offset(base)
- Purpose: To store a doubleword to memory to complete an atomicread-modify-write.
+SCD rt, offset(base)
+store a doubleword memory complete an atomicread-modify-write.
 
 -----------------------------------------------------------------
 | SD        | Store Doubleword                                  |
 |-----------|---------------------------------------------------|
 |111111 (63)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SD rt, offset(base)
- Purpose: To store a doubleword to memory.
- Descrip: doulbeword[base+offset] = rt
+SD rt, offset(base)
+store a doubleword memory.
+doulbeword[base+offset] = rt
 
 -----------------------------------------------------------------
 | SDL       | Store Doubleword Left                             |
 |-----------|---------------------------------------------------|
 |101100 (44)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SDL rt, offset(base)
- Purpose: To store the most-significant part of a doubleword toan unaligned memory address.
- Descrip: right[base+offset] = left(rt)
+SDL rt, offset(base)
+store the most-significant part of a doubleword toan unaligned memory address.
+right[base+offset] = left(rt)
 
 -----------------------------------------------------------------
 | SDR       | Store Doubleword Right                            |
 |-----------|---------------------------------------------------|
 |101101 (45)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SDR rt, offset(base)
- Purpose: To store the least-significant part of a doubleword toan unaligned memory address.
- Descrip: left[base+offset] = right(rt)
+SDR rt, offset(base)
+store the least-significant part of a doubleword toan unaligned memory address.
+left[base+offset] = right(rt)
 
 -----------------------------------------------------------------
 | SH        | Store Halfword                                    |
 |-----------|---------------------------------------------------|
 |101001 (41)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SH rt, offset(base)
- Purpose: To store a halfword to memory.
- Descrip: halfword[base+offset] = rt
+SH rt, offset(base)
+store a halfword memory.
+halfword[base+offset] = rt
 
 -----------------------------------------------------------------
 | SW        | Store Word                                        |
 |-----------|---------------------------------------------------|
 |101011 (43)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SW rt, offset(base)
- Purpose: To store a word to memory.
- Descrip: word[base+offset] = rt
+SW rt, offset(base)
+store a word memory.
+word[base+offset] = rt
 
 -----------------------------------------------------------------
 | SWL       | Store Word Left                                   |
 |-----------|---------------------------------------------------|
 |101010 (42)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SWL rt, offset(base)
- Purpose: To store the most-significant part of a word to anunaligned memory address.
- Descrip: right[base+offset] = left(rt)
+SWL rt, offset(base)
+store the most-significant part of a word anunaligned memory address.
+right[base+offset] = left(rt)
 
 -----------------------------------------------------------------
 | SWR       | Store Word Right                                  |
 |-----------|---------------------------------------------------|
 |101110 (46)|  base   |   rt    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  SWR rt, offset(base)
- Purpose: To store the least-significant part of a word to anunaligned memory address.
- Descrip: left[base+offset] = right(rt)
+SWR rt, offset(base)
+store the least-significant part of a word anunaligned memory address.
+left[base+offset] = right(rt)
 
 -----------------------------------------------------------------
 | SYNC      | SYNChronize shared memory                         |
 |-----------|---------------------------------------------------|
 |  000000   |      0000 0000 0000 000     |  stype  |001111 (15)|
 ------6-------------------15-------------------5---------6-------
- Format:  SYNC          (stype = 0 implied)
- Purpose: To order loads and stores to shared memory in amultiprocessor system.
+SYNC          (stype = 0 implied)
+order loads and stores shared memory in amultiprocessor system.
 
 -----------------------------------------------------------------
 | ADD       | ADD word                                          |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   rd    |  00000  |100000 (32)|
 ------6----------5---------5---------5---------5----------6------
- Format:  ADD rd, rs, rt
- Purpose: To add 32-bit integers. If overflow occurs, then trap.
- Comment: ADD rd, r0, rs is equal to a MOVE rd, rs
- Descrip: rd = rs + rt
+ADD rd, rs, rt
+add 32-bit integers. If overflow occurs, then trap.
+ Comment: ADD rd, r0, rs is equal a MOVE rd, rs
+rd = rs + rt
 
 -----------------------------------------------------------------
 | ADDI      | ADD Immediate word                                |
 |-----------|---------------------------------------------------|
 |001000 (8) |   rs    |   rt    |          immediate            |
 ------6----------5---------5-------------------16----------------
- Format:  ADDI rt, rs, immediate
- Purpose: To add a constant to a 32-bit integer.If overflow occurs, then trap.
- Descrip: rt = rs + immediate
+ADDI rt, rs, immediate
+add a constant a 32-bit integer.If overflow occurs, then trap.
+rt = rs + immediate
 
 -----------------------------------------------------------------
 | ADDIU     | ADD Immediate Unsigned word                       |
 |-----------|---------------------------------------------------|
 |001001 (9) |   rs    |   rt    |          immediate            |
 ------6----------5---------5-------------------16----------------
- Format:  ADDIU rt, rs, immediate
- Purpose: To add a constant to a 32-bit integer.
- Descrip: rt = rs + immediate
+ADDIU rt, rs, immediate
+add a constant a 32-bit integer.
+rt = rs + immediate
 
 -----------------------------------------------------------------
 | ADDU      | ADD Unsigned word                                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100001 (33)|
 ------6----------5---------5---------5---------5----------6------
- Format:  ADDU rd, rs, rt
- Purpose: To add 32-bit integers.
- Descrip: rd = rs + rt
+ADDU rd, rs, rt
+add 32-bit integers.
+rd = rs + rt
 
 -----------------------------------------------------------------
 | AND       | AND                                               |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100100 (36)|
 ------6----------5---------5---------5---------5----------6------
- Format:  AND rd, rs, rt
- Purpose: To do a bitwise logical AND.
- Descrip: rd = (rs AND rt)
+AND rd, rs, rt
+do a bitwise logical AND.
+rd = (rs AND rt)
 
 -----------------------------------------------------------------
 | ANDI      | AND Immediate                                     |
 |-----------|---------------------------------------------------|
 |001100 (12)|   rs    |   rt    |          immediate            |
 ------6----------5---------5-------------------16----------------
- Format:  ANDI rt, rs, immediate
- Purpose: To do a bitwise logical AND with a constant.
- Descrip: rt = (rs AND immediate)
+ANDI rt, rs, immediate
+do a bitwise logical AND with a constant.
+rt = (rs AND immediate)
 
 -----------------------------------------------------------------
 | DADD      | Doubleword ADD                                    |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |101100 (44)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DADD rd, rs, rt
- Purpose: To add 64-bit integers. If overflow occurs, then trap.
- Descrip: rd = rs + rt
+DADD rd, rs, rt
+add 64-bit integers. If overflow occurs, then trap.
+rd = rs + rt
 
 -----------------------------------------------------------------
 | DADDI     | Doubleword ADD Immediate                          |
 |-----------|---------------------------------------------------|
 |011000 (24)|   rs    |   rt    |          immediate            |
 ------6----------5---------5-------------------16----------------
- Format:  DADDI rt, rs, immediate
- Purpose: To add a constant to a 64-bit integer.If overflow occurs, then trap.
- Descrip: rt = rs + immediate
+DADDI rt, rs, immediate
+add a constant a 64-bit integer.If overflow occurs, then trap.
+rt = rs + immediate
 
 -----------------------------------------------------------------
 | DADDIU    | Doubleword ADD Immediate Unsigned                 |
 |-----------|---------------------------------------------------|
 |011001 (25)|   rs    |   rt    |          immediate            |
 ------6----------5---------5-------------------16----------------
- Format:  DADDIU rt, rs, immediate
- Purpose: To add a constant to a 64-bit integer.
- Descrip: rt = rs + immediate
+DADDIU rt, rs, immediate
+add a constant a 64-bit integer.
+rt = rs + immediate
 
 -----------------------------------------------------------------
 | DADDU     | Doubleword ADD Unsigned                           |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |101101 (45)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DADDU rd, rs, rt
- Purpose: To add 64-bit integers.
- Descrip: rd = rs + rt
+DADDU rd, rs, rt
+add 64-bit integers.
+rd = rs + rt
 
 -----------------------------------------------------------------
 | DDIV      | Doubleword DIVide                                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011110 (30)|
 ------6----------5---------5--------------10--------------6------
- Format:  DDIV rs, rt
- Purpose: To divide 64-bit signed integers.
- Descrip: LO = rs / rt;     HI = rs MOD rt
+DDIV rs, rt
+divide 64-bit signed integers.
+LO = rs / rt;     HI = rs MOD rt
 
 -----------------------------------------------------------------
 | DDIVU     | Doubleword DIVide Unsigned                        |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011111 (31)|
 ------6----------5---------5--------------10--------------6------
- Format:  DDIVU rs, rt
- Purpose: To divide 64-bit unsigned integers.
- Descrip: LO = rs / rt;     HI = rs MOD rt
+DDIVU rs, rt
+divide 64-bit unsigned integers.
+LO = rs / rt;     HI = rs MOD rt
 
 -----------------------------------------------------------------
 | DIV       | DIVide word                                       |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011010 (26)|
 ------6----------5---------5--------------10--------------6------
- Format:  DIV rs, rt
- Purpose: To divide 32-bit signed integers.
- Descrip: LO = rs / rt;     HI = rs MOD rt
+DIV rs, rt
+divide 32-bit signed integers.
+LO = rs / rt;     HI = rs MOD rt
 
 -----------------------------------------------------------------
 | DIVU      | DIVide Unsigned word                              |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011011 (27)|
 ------6----------5---------5--------------10--------------6------
- Format:  DIVU rs, rt
- Purpose: To divide 32-bit unsigned integers.
- Descrip: LO = rs / rt;     HI = rs MOD rt
+DIVU rs, rt
+divide 32-bit unsigned integers.
+LO = rs / rt;     HI = rs MOD rt
 
 -----------------------------------------------------------------
 | DMULT     | Doubleword MULTiply                               |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011100 (28)|
 ------6----------5---------5--------------10--------------6------
- Format:  DMULT rs, rt
- Purpose: To multiply 64-bit signed integers.
- Descrip: LO = low(rs*rt);  HI = high(rs*rt)
+DMULT rs, rt
+multiply 64-bit signed integers.
+LO = low(rs*rt);  HI = high(rs*rt)
 
 -----------------------------------------------------------------
 | DMULTU    | Doubleword MULTiply Unsigned                      |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011101 (29)|
 ------6----------5---------5--------------10--------------6------
- Format:  DMULTU rs, rt
- Purpose: To multiply 64-bit unsigned integers.
- Descrip: LO = low(rs*rt);  HI = high(rs*rt)
+DMULTU rs, rt
+multiply 64-bit unsigned integers.
+LO = low(rs*rt);  HI = high(rs*rt)
 
 -----------------------------------------------------------------
 | DSLL      | Doubleword Shift Left Logical                     |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111000 (56)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSLL rd, rt, sa
- Purpose: To left shift a doubleword by a fixed amount -- 0 to 31 bits.
- Descrip: rd = rt << sa
+DSLL rd, rt, sa
+left shift a doubleword by a fixed amount -- 0 31 bits.
+rd = rt << sa
 
 -----------------------------------------------------------------
 | DSLL32    | Doubleword Shift Left Logical +32                 |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111100 (60)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSLL32 rd, rt, sa
- Purpose: To left shift a doubleword by a fixed amount -- 32 to 63 bits.
- Descrip: rd = rt << (sa+32)
+DSLL32 rd, rt, sa
+left shift a doubleword by a fixed amount -- 32 63 bits.
+rd = rt << (sa+32)
 
 -----------------------------------------------------------------
 | DSLLV     | Doubleword Shift Left Logical Variable            |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |010100 (20)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSLLV rd, rt, rs
- Purpose: To left shift a doubleword by a variable number of bits.
- Descrip: rd = rt << rs
+DSLLV rd, rt, rs
+left shift a doubleword by a variable number of bits.
+rd = rt << rs
 
 -----------------------------------------------------------------
 | DSRA      | Doubleword Shift Right Arithmetic                 |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111011 (59)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRA rd, rt, sa
- Purpose: To arithmetic right shift a doubleword by a fixedamount -- 0 to 31 bits.
- Descrip: rd = rt >> sa
+DSRA rd, rt, sa
+arithmetic right shift a doubleword by a fixedamount -- 0 31 bits.
+rd = rt >> sa
 
 -----------------------------------------------------------------
 | DSRA32    | Doubleword Shift Right Arithmetic +32             |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111111 (63)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRA32 rd, rt, sa  
- Purpose: To arithmetic right shift a doubleword by a fixedamount -- 32-63 bits.
- Descrip: rd = rt >> (sa+32)
+DSRA32 rd, rt, sa  
+arithmetic right shift a doubleword by a fixedamount -- 32-63 bits.
+rd = rt >> (sa+32)
 
 -----------------------------------------------------------------
 | DSRAV     | Doubleword Shift Right Arithmetic Variable        |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   rs    |010111 (23)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRAV rd, rt, rs
- Purpose: To arithmetic right shift a doubleword by a variablenumber of bits.
- Descrip: rd = rt >> rs
+DSRAV rd, rt, rs
+arithmetic right shift a doubleword by a variablenumber of bits.
+rd = rt >> rs
 
 -----------------------------------------------------------------
 | DSRL      | Doubleword Shift Right Logical                    |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111010 (58)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRL rd, rt, sa
- Purpose: To logical right shift a doubleword by a fixed amount-- 0 to 31 bits.
- Descrip: rd = rt >> sa
+DSRL rd, rt, sa
+logical right shift a doubleword by a fixed amount-- 0 31 bits.
+rd = rt >> sa
 
 -----------------------------------------------------------------
 | DSRL32    | Doubleword Shift Right Logical +32                |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |111110 (62)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRL32 rd, rt, sa
- Purpose: To logical right shift a doubleword by a fixed amount-- 32 to 63 bits.
- Descrip: rd = rt >> (sa+32)
+DSRL32 rd, rt, sa
+logical right shift a doubleword by a fixed amount-- 32 63 bits.
+rd = rt >> (sa+32)
 
 -----------------------------------------------------------------
 | DSRLV     | Doubleword Shift Right Logical Variable           |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   rs    |010110 (22)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSRLV rd, rt, rs
- Purpose: To logical right shift a doubleword by a variable number of bits.
- Descrip: rd = rt >> rs
+DSRLV rd, rt, rs
+logical right shift a doubleword by a variable number of bits.
+rd = rt >> rs
 
 -----------------------------------------------------------------
 | DSUB      | Doubleword SUBtract                               |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |101110 (46)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSUB rd, rs, rt
- Purpose: To subtract 64-bit integers; trap if overflow.
- Descrip: rd = rs - rt
+DSUB rd, rs, rt
+subtract 64-bit integers; trap if overflow.
+rd = rs - rt
 
 -----------------------------------------------------------------
 | DSUBU     | Doubleword SUBtract Unsigned                      |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   rd    |  00000  |101111 (47)|
 ------6----------5---------5---------5---------5----------6------
- Format:  DSUBU rd, rs, rt
- Purpose: To subtract 64-bit integers.
- Descrip: rd = rs - rt
+DSUBU rd, rs, rt
+subtract 64-bit integers.
+rd = rs - rt
 
 -----------------------------------------------------------------
 | LUI       | Load Upper Immediate                              |
 |-----------|---------------------------------------------------|
 |001111 (15)|  00000  |   rt    |           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  LUI rt, immediate
- Purpose: To load a constant into the upper half of a word.
- Descrip: rt = immediate * 10000h
+LUI rt, immediate
+load a constant inthe upper half of a word.
+rt = immediate * 10000h
 
 -----------------------------------------------------------------
 | MFHI      | Move From HI register                             |
 |-----------|---------------------------------------------------|
 |  000000   |   0000 0000 00    |   rd    |  00000  |010000 (16)|
 ------6---------------10-------------5---------5----------6------
- Format:  MFHI rd
- Purpose: To copy the special purpose HI register to a GPR.
- Descrip: rd = HI
+MFHI rd
+copy the special purpose HI register a GPR.
+rd = HI
 
 -----------------------------------------------------------------
 | MFLO      | Move From LO register                             |
 |-----------|---------------------------------------------------|
 |  000000   |   0000 0000 00    |   rd    |  00000  |010010 (18)|
 ------6---------------10-------------5---------5----------6------
- Format:  MFLO rd
- Purpose: To copy the special purpose LO register to a GPR.
- Descrip: rd = LO
+MFLO rd
+copy the special purpose LO register a GPR.
+rd = LO
 
 -----------------------------------------------------------------
-| MTHI      | Move To HI register                               |
+| MTHI      | Move HI register                               |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |      0000 0000 0000 000     |010001 (17)|
 ------6----------5------------------15--------------------6------
- Format:  MTHI rs
- Purpose: To copy a GPR to the special purpose HI register.
+MTHI rs
+copy a GPR the special purpose HI register.
 
 -----------------------------------------------------------------
-| MTLO      | Move To LO register                               |
+| MTLO      | Move LO register                               |
 |-----------|---------------------------------------------------|
 |  000000   |    rs   |      0000 0000 0000 000     |010011 (19)|
 ------6----------5------------------15--------------------6------
- Format:  MTLO rs
- Purpose: To copy a GPR to the special purpose LO register.
+MTLO rs
+copy a GPR the special purpose LO register.
 
 -----------------------------------------------------------------
 | MULT      | MULTiply word                                     |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011000 (24)|
 ------6----------5---------5--------------10--------------6------
- Format:  MULT rs, rt
- Purpose: To multiply 32-bit signed integers.
- Descrip: LO = low(rs*rt);    HI = high(rs*rt)
+MULT rs, rt
+multiply 32-bit signed integers.
+LO = low(rs*rt);    HI = high(rs*rt)
 
 -----------------------------------------------------------------
 | MULTU     | MULTiply Unsigned word                            |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |   0000 0000 00    |011001 (25)|
 ------6----------5---------5--------------10--------------6------
- Format:  MULTU rs, rt
- Purpose: To multiply 32-bit unsigned integers.
- Descrip: LO = low(rs*rt);    HI = high(rs*rt)
+MULTU rs, rt
+multiply 32-bit unsigned integers.
+LO = low(rs*rt);    HI = high(rs*rt)
 
 -----------------------------------------------------------------
 | NOR       | Not OR                                            |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100111 (39)|
 ------6----------5---------5---------5---------5----------6------
- Format:  NOR rd, rs, rt
- Purpose: To do a bitwise logical NOT OR.
- Descrip: rd = (rs NOR rt)
+NOR rd, rs, rt
+do a bitwise logical NOT OR.
+rd = (rs NOR rt)
 
 -----------------------------------------------------------------
 | OR        | OR                                                |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100101 (37)|
 ------6----------5---------5---------5---------5----------6------
- Format:  OR rd, rs, rt
- Purpose: To do a bitwise logical OR.
- Descrip: rd = (rs OR rt)
+OR rd, rs, rt
+do a bitwise logical OR.
+rd = (rs OR rt)
 
 -----------------------------------------------------------------
 | ORI       | OR Immediate                                      |
 |-----------|---------------------------------------------------|
 |001101 (13)|   rs    |   rt    |            immediate          |
 ------6----------5---------5-------------------16----------------
- Format:  ORI rt, rs, immediate
- Purpose: To do a bitwise logical OR with a constant.
- Comment: ORI rt, r0, imm is equal to a LI rt, imm
- Descrip: rt = (rs OR immediate)
+ORI rt, rs, immediate
+do a bitwise logical OR with a constant.
+ Comment: ORI rt, r0, imm is equal a LI rt, imm
+rt = (rs OR immediate)
 
 -----------------------------------------------------------------
 | SLL       | Shift word Left Logical                           |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |000000 (0) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SLL rd, rt, sa
- Purpose: To left shift a word by a fixed number of bits.
- Comment: SLL r0, r0, 0 is equal to a NOP (No OPeration)
- Descrip: rd = rt << sa
+SLL rd, rt, sa
+left shift a word by a fixed number of bits.
+ Comment: SLL r0, r0, 0 is equal a NOP (No OPeration)
+rd = rt << sa
 
 -----------------------------------------------------------------
 | SLLV      | Shift word Left Logical Variable                  |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |000100 (4) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SLLV rd, rt, rs
- Purpose: To left shift a word by a variable number of bits.
- Descrip: rd = rt << sa
+SLLV rd, rt, rs
+left shift a word by a variable number of bits.
+rd = rt << sa
 
 -----------------------------------------------------------------
 | SLT       | Set on Less Than                                  |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |101010 (42)|
 ------6----------5---------5---------5---------5----------6------
- Format:  SLT rd, rs, rt
- Purpose: To record the result of a less-than comparison.
- Descrip: if rs < rt then rd = 1 else rd = 0
+SLT rd, rs, rt
+record the result of a less-than comparison.
+if rs < rt then rd = 1 else rd = 0
 
 -----------------------------------------------------------------
 | SLTI      | Set on Less Than Immediate                        |
 |-----------|---------------------------------------------------|
 |001010 (10)|    rs   |   rt    |            immediate          |
 ------6----------5---------5-------------------16----------------
- Format:  SLTI rt, rs, immediate
- Purpose: To record the result of a less-than comparison with a constant.
- Descrip: if rs < immediate then rd = 1 else rd = 0
+SLTI rt, rs, immediate
+record the result of a less-than comparison with a constant.
+if rs < immediate then rd = 1 else rd = 0
 
 -----------------------------------------------------------------
 | SLTIU     | Set on Less Than Immediate Unsigned               |
 |-----------|---------------------------------------------------|
 |001011 (11)|   rs    |   rt    |            immediate          |
 ------6----------5---------5-------------------16----------------
- Format:  SLTIU rt, rs, immediate
- Purpose: To record the result of an unsigned less-thancomparison with a constant.
- Descrip: if rs < immediate then rd = 1 else rd = 0
+SLTIU rt, rs, immediate
+record the result of an unsigned less-thancomparison with a constant.
+if rs < immediate then rd = 1 else rd = 0
 
 -----------------------------------------------------------------
 | SLTU      | Set on Less Than Unsigned                         |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |101011 (43)|
 ------6----------5---------5---------5---------5----------6------
- Format:  SLTU rd, rs, rt
- Purpose: To record the result of an unsigned less-than comparison.
- Descrip: if rs < rt then rd = 1 else rd = 0
+SLTU rd, rs, rt
+record the result of an unsigned less-than comparison.
+if rs < rt then rd = 1 else rd = 0
 
 -----------------------------------------------------------------
 | SRA       | Shift word Right Arithmetic                       |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |000011 (3) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SRA rd, rt, sa
- Purpose: To arithmetic right shift a word by a fixed number of bits.
- Descrip: rd = rt >> sa
+SRA rd, rt, sa
+arithmetic right shift a word by a fixed number of bits.
+rd = rt >> sa
 
 -----------------------------------------------------------------
 | SRAV      | Shift word Right Arithmetic Variable              |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |000111 (7) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SRAV rd, rt, rs
- Purpose: To arithmetic right shift a word by a variable number of bits.
- Descrip: rd = rt >> rs
+SRAV rd, rt, rs
+arithmetic right shift a word by a variable number of bits.
+rd = rt >> rs
 
 -----------------------------------------------------------------
 | SRL       | Shift word Right Logical                          |
 |-----------|---------------------------------------------------|
 |  000000   |  00000  |   rt    |    rd   |   sa    |000010 (2) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SRL rd, rt, sa
- Purpose: To logical right shift a word by a fixed number of bits.
- Descrip: rd = rt >> sa
+SRL rd, rt, sa
+logical right shift a word by a fixed number of bits.
+rd = rt >> sa
 
 -----------------------------------------------------------------
 | SRLV      | Shift word Right Logical Variable                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |000110 (6) |
 ------6----------5---------5---------5---------5----------6------
- Format:  SRLV rd, rt, rs
- Purpose: To logical right shift a word by a variable number of bits.
- Descrip: rd = rt >> rs
+SRLV rd, rt, rs
+logical right shift a word by a variable number of bits.
+rd = rt >> rs
 
 -----------------------------------------------------------------
 | SUB       | SUBtract word                                     |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100010 (34)|
 ------6----------5---------5---------5---------5----------6------
- Format:  SUB rd, rs, rt
- Purpose: To subtract 32-bit integers. If overflow occurs, then trap.
- Comment: SUB rd, r0, rt is equal to a NEG rd, rt
- Descrip: rd = rs - rt
+SUB rd, rs, rt
+subtract 32-bit integers. If overflow occurs, then trap.
+ Comment: SUB rd, r0, rt is equal a NEG rd, rt
+rd = rs - rt
 
 -----------------------------------------------------------------
 | SUBU      | SUBtract Unsigned word                            |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100011 (35)|
 ------6----------5---------5---------5---------5----------6------
- Format:  SUBU rd, rs, rt
- Purpose: To subtract 32-bit integers. No trap on overflow.
- Comment: SUBU rd, r0, rs is equal to a NEGU rd, rs
- Descrip: rd = rs - rt
+SUBU rd, rs, rt
+subtract 32-bit integers. No trap on overflow.
+ Comment: SUBU rd, r0, rs is equal a NEGU rd, rs
+rd = rs - rt
 
 -----------------------------------------------------------------
 | XOR       | eXclusive OR                                      |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |    rd   |  00000  |100110 (38)|
 ------6----------5---------5---------5---------5----------6------
- Format:  XOR rd, rs, rt
- Purpose: To do a bitwise logical EXCLUSIVE OR.
- Descrip: rd = (rs XOR rt)
+XOR rd, rs, rt
+do a bitwise logical EXCLUSIVE OR.
+rd = (rs XOR rt)
 
 -----------------------------------------------------------------
 | XORI      | eXclusive OR Immediate                            |
 |-----------|---------------------------------------------------|
 |001110 (14)|   rs    |   rt    |           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  XORI rt, rs, immediate
- Purpose: To do a bitwise logical EXCLUSIVE OR with a constant.
- Descrip: rd = (rs XOR immediate)
+XORI rt, rs, immediate
+do a bitwise logical EXCLUSIVE OR with a constant.
+rd = (rs XOR immediate)
 
 -----------------------------------------------------------------
 | BEQ       | Branch on EQual                                   |
 |-----------|---------------------------------------------------|
 |000100 (4) |   rs    |   rt    |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BEQ rs, rt, offset
- Purpose: To compare GPRs then do a PC-relative conditional branch.
- Comment: BEQ rs, r0, offset is equal to a BEQZ rs, offsetBEQ r0, r0, offset is equal to a B offset
- Descrip: branch if rs = rt
+BEQ rs, rt, offset
+compare GPRs then do a PC-relative conditional branch.
+ Comment: BEQ rs, r0, offset is equal a BEQZ rs, offsetBEQ r0, r0, offset is equal a B offset
+branch if rs = rt
 
 -----------------------------------------------------------------
 | BEQL      | Branch on EQual Likely                            |
 |-----------|---------------------------------------------------|
 |010100 (20)|   rs    |   rt    |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BEQL rs, rt, offset
- Purpose: To compare GPRs then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
- Comment: BEQL rs, r0, offset is equal to a BEQZL rs, offset
- Descrip: branch if rs = rt
+BEQL rs, rt, offset
+compare GPRs then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
+ Comment: BEQL rs, r0, offset is equal a BEQZL rs, offset
+branch if rs = rt
 
 -----------------------------------------------------------------
-| BGEZ      | Branch on Greater than or Equal to Zero           |
+| BGEZ      | Branch on Greater than or Equal Zero           |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |00001 (1)|            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGEZ rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch.
- Descrip: branch if rs >= 0 (signed)
+BGEZ rs, offset
+test a GPR then do a PC-relative conditional branch.
+branch if rs >= 0 (signed)
 
 -----------------------------------------------------------------
-| BGEZAL    | Branch on Greater than or Equal to Zero And Link  |
+| BGEZAL    | Branch on Greater than or Equal Zero And Link  |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |10001(17)|            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGEZAL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional procedure call.
- Comment: BGEZAL r0, offset is equal to a BAL offset
- Descrip: branch if rs >= 0 (signed) (return address in ra)
+BGEZAL rs, offset
+test a GPR then do a PC-relative conditional procedure call.
+ Comment: BGEZAL r0, offset is equal a BAL offset
+branch if rs >= 0 (signed) (return address in ra)
 
 -----------------------------------------------------------------
-| BGEZALL   | Branch on Greater than or Equal to Zero And Link Likely |
+| BGEZALL   | Branch on Greater than or Equal Zero And Link Likely |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |10011(19)|            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGEZALL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional procedure call;execute the delay slot only if the branch is taken.
- Descrip: branch if rs >= 0 (signed) (return address in ra)
+BGEZALL rs, offset
+test a GPR then do a PC-relative conditional procedure call;execute the delay slot only if the branch is taken.
+branch if rs >= 0 (signed) (return address in ra)
 
 -----------------------------------------------------------------
-| BGEZL     | Branch on Greater than or Equal to Zero Likely    |
+| BGEZL     | Branch on Greater than or Equal Zero Likely    |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |00011 (3)|            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGEZL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
- Descrip: branch if rs >= 0 (signed)
+BGEZL rs, offset
+test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
+branch if rs >= 0 (signed)
 
 -----------------------------------------------------------------
 | BGTZ      | Branch on Greater than Zero                       |
 |-----------|---------------------------------------------------|
 |000111 (7) |   rs    |  00000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGTZ rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch.
- Descrip: branch if rs > 0 (signed)
+BGTZ rs, offset
+test a GPR then do a PC-relative conditional branch.
+branch if rs > 0 (signed)
 
 -----------------------------------------------------------------
 | BGTZL     | Branch on Greater Than Zero Likely                |
 |-----------|---------------------------------------------------|
 |010111 (23)|   rs    |  00000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BGTZL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
- Descrip: branch if rs > 0 (signed)
+BGTZL rs, offset
+test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
+branch if rs > 0 (signed)
 
 -----------------------------------------------------------------
-| BLEZ      | Branch on Less than or Equal to Zero              |
+| BLEZ      | Branch on Less than or Equal Zero              |
 |-----------|---------------------------------------------------|
 |000110 (6) |   rs    |  00000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLEZ rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch.
- Descrip: branch if rs <= 0 (signed)
+BLEZ rs, offset
+test a GPR then do a PC-relative conditional branch.
+branch if rs <= 0 (signed)
 
 -----------------------------------------------------------------
-| BLEZL     | Branch on Less than or Equal to Zero Likely       |
+| BLEZL     | Branch on Less than or Equal Zero Likely       |
 |-----------|---------------------------------------------------|
 |010110 (22)|   rs    |  00000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLEZL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
- Descrip: branch if rs <= 0 (signed)
+BLEZL rs, offset
+test a GPR then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
+branch if rs <= 0 (signed)
 
 -----------------------------------------------------------------
 | BLTZ      | Branch on Less Than Zero                          |
 |-----------|---------------------------------------------------|
 |  000001 (1)   |   rs    |  00000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLTZ rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch.
- Descrip: branch if rs < 0 (signed)
+BLTZ rs, offset
+test a GPR then do a PC-relative conditional branch.
+branch if rs < 0 (signed)
 
 -----------------------------------------------------------------
 | BLTZAL    | Branch on Less Than Zero And Link                 |
 |-----------|---------------------------------------------------|
 |  000001 (1)   |   rs    |  10000  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLTZAL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional procedure call.
- Descrip: branch if rs < 0 (signed) (return address in ra)
+BLTZAL rs, offset
+test a GPR then do a PC-relative conditional procedure call.
+branch if rs < 0 (signed) (return address in ra)
 
 -----------------------------------------------------------------
 | BLTZALL   | Branch on Less Than Zero And Link Likely          |
 |-----------|---------------------------------------------------|
 |  000001 (1)   |   rs    |  10010  |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLTZALL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional procedurecall; execute the delay slot only if the branch is taken.
- Descrip: branch if rs < 0 (signed) (return address in ra)
+BLTZALL rs, offset
+test a GPR then do a PC-relative conditional procedurecall; execute the delay slot only if the branch is taken.
+branch if rs < 0 (signed) (return address in ra)
 
 -----------------------------------------------------------------
 | BLTZL     | Branch on Less Than Zero Likely                   |
 |-----------|---------------------------------------------------|
 |  000001 (1)  |   rs    |00010 (2)|            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BLTZL rs, offset
- Purpose: To test a GPR then do a PC-relative conditional branch;  execute the delay slot only if the branch is taken.
- Descrip: branch if rs < 0 (signed)
+BLTZL rs, offset
+test a GPR then do a PC-relative conditional branch;  execute the delay slot only if the branch is taken.
+branch if rs < 0 (signed)
 
 -----------------------------------------------------------------
 | BNE       | Branch on Not Equal                               |
 |-----------|---------------------------------------------------|
 | 000101 (5) |   rs    |   rt    |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BNE rs, rt, offset
- Purpose: To compare GPRs then do a PC-relative conditional branch.
- Comment: BNE rs, r0, offset is equal to a BNEZ rs, offset
- Descrip: branch if rs <> rt
+BNE rs, rt, offset
+compare GPRs then do a PC-relative conditional branch.
+ Comment: BNE rs, r0, offset is equal a BNEZ rs, offset
+branch if rs <> rt
 
 -----------------------------------------------------------------
 | BNEL      | Branch on Not Equal Likely                        |
 |-----------|---------------------------------------------------|
 |010101 (21)|   rs    |   rt    |            offset             |
 ------6----------5---------5-------------------16----------------
- Format:  BNEL rs, rt, offset
- Purpose: To compare GPRs then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
- Comment: BNEL rs, r0, offset is equal to a BNEZL rs, offset
- Descrip: branch if rs <> rt
+BNEL rs, rt, offset
+compare GPRs then do a PC-relative conditional branch;execute the delay slot only if the branch is taken.
+ Comment: BNEL rs, r0, offset is equal a BNEZL rs, offset
+branch if rs <> rt
 
 -----------------------------------------------------------------
 | J         | Jump                                              |
 |-----------|---------------------------------------------------|
 |000010 (2) |                    instr_index                    |
 ------6-------------------------------26-------------------------
- Format:  J target
- Purpose: To branch within the current 256 MB aligned region.
+J target
+branch within the current 256 MB aligned region.
 
 -----------------------------------------------------------------
 | JAL       | Jump And Link                                     |
 |-----------|---------------------------------------------------|
 |000011 (3) |                    instr_index                    |
 ------6-------------------------------26-------------------------
- Format:  JAL target
- Purpose: To procedure call within the current 256 MB aligned region.
- Descrip: return address in ra
+JAL target
+procedure call within the current 256 MB aligned region.
+return address in ra
 
 -----------------------------------------------------------------
 | JALR      | Jump And Link Register                            |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |  00000  |   rd    |  00000  |001001 (9) |
 ------6----------5---------5---------5---------5----------6------
- Format:  JALR rs, rd
- Purpose: To procedure call to an instruction address in a register.
- Descrip: return address in rd
+JALR rs, rd
+procedure call an instruction address in a register.
+return address in rd
 
 -----------------------------------------------------------------
 | JR        | Jump Register                                     |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |     0000 0000 0000 000      |001000 (8) |
 ------6----------5------------------15--------------------6------
- Format:  JR rs
- Purpose: To branch to an instruction address in a register.
- Descrip: PC = rs
+JR rs
+branch an instruction address in a register.
+PC = rs
 
 -----------------------------------------------------------------
 | BREAK     | BREAKpoint                                        |
 |-----------|---------------------------------------------------|
 |  000000   |                   code                |001101 (13)|
 ------6--------------------------20-----------------------6------
- Format:  BREAK offset
- Purpose: To cause a Breakpoint exception.
+BREAK offset
+cause a Breakpoint exception.
 
 -----------------------------------------------------------------
 | SYSCALL   | SYStem CALL                                       |
 |-----------|---------------------------------------------------|
 |  000000   |                   code                |001100 (12)|
 ------6--------------------------20-----------------------6------
- Format:  SYSCALL offset
- Purpose: To cause a System Call exception.
+SYSCALL offset
+cause a System Call exception.
 
 -----------------------------------------------------------------
 | TEQ       | Trap if EQual                                     |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110100 (52)|
 ------6----------5---------5--------------10--------------6------
- Format:  TEQ rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs = rt then trap
+TEQ rs, rt
+compare GPRs and do a conditional Trap.
+if rs = rt then trap
 
 -----------------------------------------------------------------
 | TEQI      | Trap if EQual Immediate                           |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01100(12)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TEQI rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs = immediate then trap
+TEQI rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs = immediate then trap
 
 -----------------------------------------------------------------
 | TGE       | Trap if Greater or Equal                          |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110000 (48)|
 ------6----------5---------5--------------10--------------6------
- Format:  TGE rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs >= rt then trap
+TGE rs, rt
+compare GPRs and do a conditional Trap.
+if rs >= rt then trap
 
 -----------------------------------------------------------------
 | TGEI      | Trap if Greater or Equal Immediate                |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01000 (8)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TGEI rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs >= immediate then trap
+TGEI rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs >= immediate then trap
 
 -----------------------------------------------------------------
 | TGEIU     | Trap if Greater or Equal Immediate Unsigned       |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01001 (9)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TGEIU rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs >= immediate then trap
+TGEIU rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs >= immediate then trap
 
 -----------------------------------------------------------------
 | TGEU      | Trap if Greater or Equal Unsigned                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110001 (49)|
 ------6----------5---------5--------------10--------------6------
- Format:  TGEU rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs >= rt then trap
+TGEU rs, rt
+compare GPRs and do a conditional Trap.
+if rs >= rt then trap
 
 -----------------------------------------------------------------
 | TLT       | Trap if Less Than                                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110010 (50)|
 ------6----------5---------5--------------10--------------6------
- Format:  TLT rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs < rt then trap
+TLT rs, rt
+compare GPRs and do a conditional Trap.
+if rs < rt then trap
 
 -----------------------------------------------------------------
 | TLTI      | Trap if Less Than Immediate                       |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01010(10)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TLTI rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs < immediate then trap (signed)
+TLTI rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs < immediate then trap (signed)
 
 -----------------------------------------------------------------
 | TLTIU     | Trap if Less Than Immediate Unsigned              |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01011(11)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TLTIU rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs < immediate then trap
+TLTIU rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs < immediate then trap
 
 -----------------------------------------------------------------
 | TLTU      | Trap if Less Than Unsigned                        |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110011 (51)|
 ------6----------5---------5--------------10--------------6------
- Format:  TLTU rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs < rt then trap
+TLTU rs, rt
+compare GPRs and do a conditional Trap.
+if rs < rt then trap
 
 -----------------------------------------------------------------
 | TNE       | Trap if Not Equal                                 |
 |-----------|---------------------------------------------------|
 |  000000   |   rs    |   rt    |        code       |110110 (54)|
 ------6----------5---------5--------------10--------------6------
- Format:  TNE rs, rt
- Purpose: To compare GPRs and do a conditional Trap.
- Descrip: if rs <> rt then trap
+TNE rs, rt
+compare GPRs and do a conditional Trap.
+if rs <> rt then trap
 
 -----------------------------------------------------------------
 | TNEI      | Trap if Not Equal Immediate                       |
 |-----------|---------------------------------------------------|
 |  000001   |   rs    |01110(14)|           immediate           |
 ------6----------5---------5-------------------16----------------
- Format:  TNEI rs, immediate
- Purpose: To compare a GPR to a constant and do a conditional Trap.
- Descrip: if rs <> immediate then trap
+TNEI rs, immediate
+compare a GPR a constant and do a conditional Trap.
+if rs <> immediate then trap
 
 -----------------------------------------------------------------
 | CACHE     | CACHE                                             |
 |-----------|---------------------------------------------------|
 |101111 (47)|  base   |   op    |             offset            |
 ------6----------5---------5-------------------16----------------
- Format:  CACHE op, offset(base)
- Purpose: The 16-bit offset is sign-extended and added to the contents ofgeneral register base to form a virtual address. The virtualaddress is translated to a physical address using the TLB, and the5-bit sub-opcode specifies a cache operation for that address.
+CACHE op, offset(base)
+The 16-bit offset is sign-extended and added the contents ofgeneral register base form a virtual address. The virtualaddress is translated a physical address using the TLB, and the5-bit sub-opcode specifies a cache operation for that address.
 
 -----------------------------------------------------------------
 | ERET      | Return from Exception                             |
 |-----------|---------------------------------------------------|
 |  010000   |CO|      0000 0000 0000 0000 000       |011000 (24)|
 ------6------1-------------------19-----------------------6------
- Format:  ERET
- Purpose: ERET is the R4300 instruction for returning from an interrupt,exception, or error trap. Unlike a branch or jump instruction,ERET does not execute the next instruction.
+ERET
+ERET is the R4300 instruction for returning from an interrupt,exception, or error trap. Unlike a branch or jump instruction,ERET does not execute the next instruction.
 
 -----------------------------------------------------------------
 | MFC0      | Move word From CP0                                |
 |-----------|---------------------------------------------------|
 |  010000   |00000 (0)|   rt    |   fs    |    0000 0000 000    |
 ------6----------5---------5---------5--------------11-----------
- Format:  MFC0 rt, rd
- Purpose: To copy a word from an FPR to a GPR.
- Descrip: rt = COP rd
+MFC0 rt, rd
+copy a word from an FPR a GPR.
+rt = COP rd
 
 -----------------------------------------------------------------
-| MTC0      | Move word to CP0                                  |
+| MTC0      | Move word CP0                                  |
 |-----------|---------------------------------------------------|
 |  010000   |00100 (4)|   rt    |   fs    |    0000 0000 000    |
 ------6----------5---------5---------5--------------11-----------
- Format:  MTC0 rt, rd
- Purpose: To copy a word from a GPR to an FPR.
- Descrip: COP rd = rt
+MTC0 rt, rd
+copy a word from a GPR an FPR.
+COP rd = rt
 
 -----------------------------------------------------------------
 | TLBP      | Translation Lookaside Buffer Probe                |
 |-----------|---------------------------------------------------|
 |  010000   |CO|      0000 0000 0000 0000 000       | 001000 (8)|
 ------6------1-------------------19-----------------------6------
- Format:  TLBP
- Purpose: The Index register is loaded with the address of the TLB entrywhose contents match the contents of the EntryHi register. If noTLB entry matches, the high-order bit of the Index register is set.The architecture does not specify the operation of memory referencesassociated with the instruction immediately after a TLBP instruction,nor is the operation specified if more than one TLB entry matches.
+TLBP
+The Index register is loaded with the address of the TLB entrywhose contents match the contents of the EntryHi register. If noTLB entry matches, the high-order bit of the Index register is set.The architecture does not specify the operation of memory referencesassociated with the instruction immediately after a TLBP instruction,nor is the operation specified if more than one TLB entry matches.
 
 -----------------------------------------------------------------
 | TLBR      | Translation Lookaside Buffer Read                 |
 |-----------|---------------------------------------------------|
 |  010000   |CO|      0000 0000 0000 0000 000       | 000001 (1)|
 ------6------1-------------------19-----------------------6------
- Format:  TLBR
- Purpose: The G bit (which controls ASID matching) read from the TLB iswritten into both of the EntryLo0 and EntryLo1 registers.The EntryHi and EntryLo registers are loaded with the contents ofthe TLB entry pointed at by the contents of the TLB Index register.The operation is invalid (and the results are unspecified) if thecontents of the TLB Index register are greater than the number ofTLB entries in the processor.
+TLBR
+The G bit (which controls ASID matching) read from the TLB iswritten inboth of the EntryLo0 and EntryLo1 registers.The EntryHi and EntryLo registers are loaded with the contents ofthe TLB entry pointed at by the contents of the TLB Index register.The operation is invalid (and the results are unspecified) if thecontents of the TLB Index register are greater than the number ofTLB entries in the processor.
 
 -----------------------------------------------------------------
 | TLBWI     | Translation Lookaside Buffer Write Index          |
 |-----------|---------------------------------------------------|
 |  010000   |CO|      0000 0000 0000 0000 000       | 000010 (2)|
 ------6------1-------------------19-----------------------6------
- Format:  TLBWI
- Purpose: The G bit of the TLB is written with the logical AND of the G bitsin the EntryLo0 and EntryLo1 registers. The TLB entry pointed at bythe contents of the TLB Index register is loaded with the contentsof the EntryHi and EntryLo registers. The operation is invalid (andthe results are unspecified) if the contents of the TLB Indexregister are greater than the number of TLB entries in the processor.
+TLBWI
+The G bit of the TLB is written with the logical AND of the G bitsin the EntryLo0 and EntryLo1 registers. The TLB entry pointed at bythe contents of the TLB Index register is loaded with the contentsof the EntryHi and EntryLo registers. The operation is invalid (andthe results are unspecified) if the contents of the TLB Indexregister are greater than the number of TLB entries in the processor.
 
 -----------------------------------------------------------------
 | TLBWR     | Translation Lookaside Buffer Write Random         |
 |-----------|---------------------------------------------------|
 |  010000   |CO|      0000 0000 0000 0000 000       | 000110 (6)|
 ------6------1-------------------19-----------------------6------
- Format:  TLBWR
- Purpose: The G bit of the TLB is written with the logical AND of the G bitsin the EntryLo0 and EntryLo1 registers. The TLB entry pointed at bythe contents of the TLB Random register is loaded with the contentsof the EntryHi and EntryLo registers.
+TLBWR
+The G bit of the TLB is written with the logical AND of the G bitsin the EntryLo0 and EntryLo1 registers. The TLB entry pointed at bythe contents of the TLB Random register is loaded with the contentsof the EntryHi and EntryLo registers.

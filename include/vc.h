@@ -5,6 +5,7 @@
 
 #include <ns4.h>
 #include <vr4300i.h>
+#include <pif.h>
 
 /* The virtual console structure. */
 struct _ns4_vc {
@@ -14,6 +15,8 @@ struct _ns4_vc {
     void *rdram;
     /* The console's VR4300i 64-bit MIPS CPU. */
     struct _vr4300i cpu;
+    /* The console's Peripheral InterFace chip. */
+    struct _pif pif;
 };
 
 /* Creates a new virtual console given a path to the ROM image. */

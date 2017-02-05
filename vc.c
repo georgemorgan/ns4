@@ -1,3 +1,5 @@
+/* vc.c - Implementation of the Virtual Console datatype. */
+
 #include <vc.h>
 #include <n64.h>
 
@@ -24,6 +26,10 @@ void ns4_vc_create(struct _ns4_vc *vc, char *path) {
     fclose(image);
     /* Allocate memory for the sytem RDRAM. */
     vc -> rdram = malloc(N64_RDRAM_SIZE);
+    /* Give the virtual console a CPU. */
+    vr4300i_create(&(vc -> cpu));
+    /* Give the virtual console a PIF. */
+    pif_create(&(vc -> pif));
 }
 
 void ns4_vc_rom_info(struct _ns4_vc *vc) {
