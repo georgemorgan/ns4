@@ -14,5 +14,5 @@ void ns4_vr4300i_lui(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t immediate = (vr -> op >> 0x0) & 0xffff;
 
-	ns4_debug("lui rt, immediate, ");
+	ns4_debug("lui %s, 0x%x", regstrs[rt], immediate);
 }

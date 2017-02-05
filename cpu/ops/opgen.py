@@ -45,10 +45,26 @@ def main():
                 cfc.append('\tuint32_t ' + ob + ' = (vr -> op >> ' + str(hex(32 - width - offset)) + ') & ' + str(hex(pow(2, width) - 1)) + ';\n')
             offset += width
         cfc.append('\n\tns4_debug("' + name + ' ')
+        format = []
         for i in fields[1:]:
             if i.isalpha():
-                cfc.append(i + ', ')
-        cfc.append('");\n')
+                if (i.startswith('r')):
+                    dstr = '%s'
+                else:
+                    dstr = '0x%x'
+                format.append(dstr)
+        cfc.append(', '.join(format) + '"')
+        params = []
+        for i in fields[1:]:
+            if i.isalpha():
+                if (i.startswith('r')):
+                    desc = 'regstrs[' + i + ']'
+                else:
+                    desc = i
+                params.append(desc)
+        if len(params):
+            cfc.append(', ' + ', '.join(params))
+        cfc.append(');\n')
         cfc.append('}')
         opf.write(''.join(cfc))
     opst = sorted(opst, key=lambda x: int(str(x[1]), 16))

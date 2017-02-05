@@ -15,5 +15,5 @@ void ns4_vr4300i_lwr(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
-	ns4_debug("lwr base, rt, offset, ");
+	ns4_debug("lwr 0x%x, %s, 0x%x", base, regstrs[rt], offset);
 }

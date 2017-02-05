@@ -12,5 +12,5 @@
 void ns4_vr4300i_eret(struct _vr4300i *vr) {
 	uint32_t CO = (vr -> op >> 0x19) & 0x1;
 
-	ns4_debug("eret CO, ");
+	ns4_debug("eret 0x%x", CO);
 }

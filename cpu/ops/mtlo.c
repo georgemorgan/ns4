@@ -12,5 +12,5 @@
 void ns4_vr4300i_mtlo(struct _vr4300i *vr) {
 	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
 
-	ns4_debug("mtlo rs, ");
+	ns4_debug("mtlo %s", regstrs[rs]);
 }

@@ -15,5 +15,5 @@ void ns4_vr4300i_sra(struct _vr4300i *vr) {
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 	uint32_t sa = (vr -> op >> 0x6) & 0x1f;
 
-	ns4_debug("sra rt, rd, sa, ");
+	ns4_debug("sra %s, %s, 0x%x", regstrs[rt], regstrs[rd], sa);
 }

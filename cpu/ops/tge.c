@@ -15,5 +15,5 @@ void ns4_vr4300i_tge(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t code = (vr -> op >> 0x6) & 0x3ff;
 
-	ns4_debug("tge rs, rt, code, ");
+	ns4_debug("tge %s, %s, 0x%x", regstrs[rs], regstrs[rt], code);
 }

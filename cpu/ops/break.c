@@ -12,5 +12,5 @@
 void ns4_vr4300i_break(struct _vr4300i *vr) {
 	uint32_t code = (vr -> op >> 0x6) & 0xfffff;
 
-	ns4_debug("break code, ");
+	ns4_debug("break 0x%x", code);
 }

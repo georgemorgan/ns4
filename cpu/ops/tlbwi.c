@@ -12,5 +12,5 @@
 void ns4_vr4300i_tlbwi(struct _vr4300i *vr) {
 	uint32_t CO = (vr -> op >> 0x19) & 0x1;
 
-	ns4_debug("tlbwi CO, ");
+	ns4_debug("tlbwi 0x%x", CO);
 }

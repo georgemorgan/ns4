@@ -16,5 +16,5 @@ void ns4_vr4300i_subu(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 
-	ns4_debug("subu rs, rt, rd, ");
+	ns4_debug("subu %s, %s, %s", regstrs[rs], regstrs[rt], regstrs[rd]);
 }

@@ -15,5 +15,5 @@ void ns4_vr4300i_tne(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t code = (vr -> op >> 0x6) & 0x3ff;
 
-	ns4_debug("tne rs, rt, code, ");
+	ns4_debug("tne %s, %s, 0x%x", regstrs[rs], regstrs[rt], code);
 }

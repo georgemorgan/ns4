@@ -14,5 +14,5 @@ void ns4_vr4300i_bltz(struct _vr4300i *vr) {
 	uint32_t rs = (vr -> op >> 0x15) & 0x1f;
 	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
-	ns4_debug("bltz rs, offset, ");
+	ns4_debug("bltz %s, 0x%x", regstrs[rs], offset);
 }

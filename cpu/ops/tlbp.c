@@ -12,5 +12,5 @@
 void ns4_vr4300i_tlbp(struct _vr4300i *vr) {
 	uint32_t CO = (vr -> op >> 0x19) & 0x1;
 
-	ns4_debug("tlbp CO, ");
+	ns4_debug("tlbp 0x%x", CO);
 }

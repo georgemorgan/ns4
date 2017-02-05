@@ -101,6 +101,9 @@ struct _vr4300i {
     struct _vr4300i_cop0 cop0;
 };
 
+/* String versions of the registers for debugging. */
+extern const char *regstrs[];
+
 /* Creates a VR4300i CPU. */
 void vr4300i_create(struct _vr4300i *vr, struct _ns4_mc *mc);
 /* Executes the entire CPU's pipeline for one instruction. */

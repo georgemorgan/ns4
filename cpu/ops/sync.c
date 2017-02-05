@@ -12,5 +12,5 @@
 void ns4_vr4300i_sync(struct _vr4300i *vr) {
 	uint32_t stype = (vr -> op >> 0x6) & 0x1f;
 
-	ns4_debug("sync stype, ");
+	ns4_debug("sync 0x%x", stype);
 }

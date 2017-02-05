@@ -15,5 +15,5 @@ void ns4_vr4300i_sdr(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t offset = (vr -> op >> 0x0) & 0xffff;
 
-	ns4_debug("sdr base, rt, offset, ");
+	ns4_debug("sdr 0x%x, %s, 0x%x", base, regstrs[rt], offset);
 }

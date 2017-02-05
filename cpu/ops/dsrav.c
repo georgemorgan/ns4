@@ -15,5 +15,5 @@ void ns4_vr4300i_dsrav(struct _vr4300i *vr) {
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 	uint32_t rs = (vr -> op >> 0x6) & 0x1f;
 
-	ns4_debug("dsrav rt, rd, rs, ");
+	ns4_debug("dsrav %s, %s, %s", regstrs[rt], regstrs[rd], regstrs[rs]);
 }

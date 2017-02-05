@@ -16,5 +16,5 @@ void ns4_vr4300i_add(struct _vr4300i *vr) {
 	uint32_t rt = (vr -> op >> 0x10) & 0x1f;
 	uint32_t rd = (vr -> op >> 0xb) & 0x1f;
 
-	ns4_debug("add rs, rt, rd, ");
+	ns4_debug("add %s, %s, %s", regstrs[rs], regstrs[rt], regstrs[rd]);
 }

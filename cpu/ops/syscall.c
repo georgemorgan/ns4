@@ -12,5 +12,5 @@
 void ns4_vr4300i_syscall(struct _vr4300i *vr) {
 	uint32_t code = (vr -> op >> 0x6) & 0xfffff;
 
-	ns4_debug("syscall code, ");
+	ns4_debug("syscall 0x%x", code);
 }
