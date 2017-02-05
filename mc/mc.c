@@ -28,6 +28,8 @@
     0x8000 0000 to 0xFFFF FFFF External SysAD Device
 */
 
+#define swap_le(word) (((word >> 24) & 0xff) | ((word << 8) & 0xff0000) | ((word >> 8) & 0xff00) | ((word << 24) & 0xff000000))
+
 void ns4_mc_create(struct _ns4_mc *mc, void *rom) {
     /* Store the ROM pointer. */
     mc -> rom = rom;
@@ -39,15 +41,71 @@ void ns4_mc_create(struct _ns4_mc *mc, void *rom) {
 
 uint32_t mc_read32(struct _ns4_mc *mc, uint64_t address) {
 
-    /* Cartridge Domain 1 Address 1 */
-    if (address > 0x05FFFFFF && address < 0x08000000) {
-        uint32_t word = *(uint32_t *)(mc -> rom + (address - 0x06000000));
-        /* Return the byte swapped word. */
-        return ((word >> 24) & 0xff) | ((word << 8) & 0xff0000) | ((word >> 8) & 0xff00) | ((word << 24) & 0xff000000);
+    if (address >= 0x000000 && address < 0x3f00000) {
+	    /* RDRAM Memory */
+
+    } else if (address >= 0x3f00000 && address < 0x4000000) {
+    	/* RDRAM Registers */
+
+    } else if (address >= 0x4000000 && address < 0x4100000) {
+    	/* SP Registers */
+
+    } else if (address >= 0x4100000 && address < 0x4200000) {
+    	/* DP Command Registers */
+
+    } else if (address >= 0x4200000 && address < 0x4300000) {
+    	/* DP Span Registers */
+
+    } else if (address >= 0x4300000 && address < 0x4400000) {
+    	/* MIPS Interface (MI) Registers */
+
+    } else if (address >= 0x4400000 && address < 0x4500000) {
+    	/* Video Interface (VI) Registers */
+
+    } else if (address >= 0x4500000 && address < 0x4600000) {
+    	/* Audio Interface (AI) Registers */
+
+    } else if (address >= 0x4600000 && address < 0x4700000) {
+    	/* Peripheral Interface (PI) Registers */
+
+    } else if (address >= 0x4700000 && address < 0x4800000) {
+    	/* RDRAM Interface (RI) Registers */
+
+    } else if (address >= 0x4800000 && address < 0x4900000) {
+    	/* Serial Interface (SI) Registers */
+
+    } else if (address >= 0x4900000 && address < 0x5000000) {
+    	/* Unused */
+
+    } else if (address >= 0x5000000 && address < 0x6000000) {
+    	/* Cartridge Domain 2 Address 1 */
+
+    } else if (address >= 0x6000000 && address < 0x8000000) {
+    	/* Cartridge Domain 1 Address 1 */
+        return swap_le(*(uint32_t *)(mc -> rom + (address - 0x6000000)));
+    } else if (address >= 0x8000000 && address < 0x10000000) {
+    	/* Cartridge Domain 2 Address 2 */
+
+    } else if (address >= 0x10000000 && address < 0x1fc00000) {
+    	/* Cartridge Domain 1 Address 2 */
+
+    } else if (address >= 0x1fc00000 && address < 0x1fc007c0) {
+    	/* PIF */
+
+    } else if (address >= 0x1fc007c0 && address < 0x1fc00800) {
+    	/* PIF */
+
+    } else if (address >= 0x1fc00800 && address < 0x1fd00000) {
+    	/* Reserved */
+
+    } else if (address >= 0x1fd00000 && address < 0x80000000) {
+    	/* Cartridge Domain 1 Address 3 */
+
+    } else if (address >= 0x80000000 && address < 0x100000000) {
+    	/* External SysAD Device */
+
     } else {
-        /* Invalid access. */
-        ns4_assert(0, NS4_WARN, "Invalid access to address 0x%08x.\n", address);
+    	ns4_debug("Invalid memory access at 0x%08x", address);
     }
 
-    return 0;
 }
