@@ -99,6 +99,10 @@ struct _vr4300i {
     uint32_t op;
     /* The program counter. */
     uint64_t pc;
+    /* The link register. */
+    uint64_t lr;
+    /* The status register. */
+    uint32_t sr;
     /* COP0 core. */
     struct _vr4300i_cop0 cop0;
 };
